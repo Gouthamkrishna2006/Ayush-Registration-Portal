@@ -1,3 +1,7 @@
+.html {
+    scroll-behavior: smooth;
+  }
+
 body, h1, h2, p, label, input, textarea, select, button {
     margin: 0;
     padding: 0;
