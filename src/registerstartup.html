@@ -63,6 +63,16 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="new-password">Create a Password:</label>
+                  <input id="new-password" type="password" name="password" pattern=".{8,}" required title="8 characters minimum">
+              </div>
+
+              <div class="form-group">
+                  <label for="confirm-password">Confirm Password:</label>
+                  <input id="confirm-password" type="password" name="confirm_password" required>
+              </div>
+
+                <div class="form-group">
                     <label for="organization-name">Organization Name:</label>
                     <input id="organization-name" type="text" name="organization_name" required>
                 </div>
@@ -167,16 +177,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="new-password">Create a Password:</label>
-                    <input id="new-password" type="password" name="password" pattern=".{8,}" required title="8 characters minimum">
-                </div>
-
-                <div class="form-group">
-                    <label for="confirm-password">Confirm Password:</label>
-                    <input id="confirm-password" type="password" name="confirm_password" required>
-                </div>
-
-                <div class="form-group">
                     <label for="accountname">Name as per the Bank Account:</label>
                     <input id="accountname" type="text" name="accountname" required>
                 </div>
@@ -205,15 +205,15 @@
                     <label for="mirc">MIRC Code:</label>
                     <input id="mirc" type="text" name="mirc" required>
                 </div>
-                <div class="form-group" style="margin: auto auto">
+                <div class="form-group spanner" style="margin: auto auto">
                     <label>
                         <input type="checkbox" name="terms" required> I have read, understood, and agree to the <a href="terms-and-conditions.html">Terms and Conditions</a>.
                     </label>
                 </div>
-                <div class="form-group" , style="margin: 0 auto;">
+                <div class="form-group spanner" , style="margin: 0 auto;">
                     <div class="g-recaptcha" data-sitekey="6LemojYqAAAAACnggBkhRp8M0IaO3ut-by6VeLfU"></div>
                 </div>
-                <div class="button-container">
+                <div class="button-container spanner">
                     <button type="submit">Register</button>
                 </div>
             </form>
