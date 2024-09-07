@@ -1,39 +1,19 @@
-
 document.addEventListener('DOMContentLoaded', function () {
-    const countrySelect = document.getElementById('country');
     const stateSelect = document.getElementById('state');
     const districtSelect = document.getElementById('district');
 
     const data = {
-        'India': {
-            'Andaman and Nicobar Islands' : ["Nicobars", "North and Middle Andaman", "South Andamans"],
-            'Maharashtra': ['Mumbai', 'Pune', 'Nagpur'],
-            'Karnataka': ['Bengaluru', 'Mysuru', 'Hubli']
-        }
+        'Maharashtra': ['Mumbai', 'Pune', 'Nagpur'],
+        'Karnataka': ['Bengaluru', 'Mysuru', 'Hubli'],
+        'Andaman and Nicobar Islands': ["Nicobars", "North and Middle Andaman", "South Andamans"]
     };
 
-    function populateCountryDropdown() {
-        for (const country in data) {
+    function populateStateDropdown() {
+        for (const state in data) {
             const option = document.createElement('option');
-            option.value = country;
-            option.textContent = country;
-            countrySelect.appendChild(option);
-        }
-    }
-
-    function populateStateDropdown(country) {
-        stateSelect.innerHTML = '<option value="">Select State</option>'; 
-        districtSelect.innerHTML = '<option value="">Select District</option>';
-        districtSelect.disabled = true;
-        stateSelect.disabled = !country;
-
-        if (data[country]) {
-            for (const state in data[country]) {
-                const option = document.createElement('option');
-                option.value = state;
-                option.textContent = state;
-                stateSelect.appendChild(option);
-            }
+            option.value = state;
+            option.textContent = state;
+            stateSelect.appendChild(option);
         }
     }
 
@@ -41,9 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
         districtSelect.innerHTML = '<option value="">Select District</option>';
         districtSelect.disabled = !state;
 
-        const country = countrySelect.value;
-        if (data[country] && data[country][state]) {
-            for (const district of data[country][state]) {
+        if (data[state]) {
+            for (const district of data[state]) {
                 const option = document.createElement('option');
                 option.value = district;
                 option.textContent = district;
@@ -52,13 +31,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    countrySelect.addEventListener('change', function () {
-        populateStateDropdown(this.value);
-    });
-
     stateSelect.addEventListener('change', function () {
         populateDistrictDropdown(this.value);
     });
 
-    populateCountryDropdown();
+    populateStateDropdown();
+});
+
+const fileInput = document.getElementById('file-upload');
+const fileNameDisplay = document.getElementById('file-name');
+
+fileInput.addEventListener('change', function() {
+    if (fileInput.files.length > 0) {
+        fileNameDisplay.textContent = `Selected file: ${fileInput.files[0].name}`;
+    } else {
+        fileNameDisplay.textContent = 'No file chosen';
+    }
 });
