@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Registration - AYUSH Registration Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AYUSH Startup Registration Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="status.html">Check Status</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="registration">
+            <h2>Startup Registration Form</h2>
+            <form method="post" action="https://register-demo.freecodecamp.org" enctype="multipart/form-data">
+                <!-- Personal Information -->
+                <label for="first-name">First Name:</label>
+                <input id="first-name" type="text" name="first_name" required /><br/>
+
+                <label for="last-name">Last Name:</label>
+                <input id="last-name" type="text" name="last_name" required /><br/>
+
+                <label for="email">Email:</label>
+                <input id="email" type="email" name="email" required /><br/>
+
+                <label for="phone">Phone Number:</label>
+                <input id="phone" type="tel" name="phone" required pattern="[0-9]{10}" /><br/>
+
+                <label for="address">Personal Address:</label>
+                <textarea id="address" name="address" rows="3" required></textarea><br/>
+
+                <!-- Account Information -->
+                <label for="new-password">Create a Password:</label>
+                <input id="new-password" type="password" name="password" pattern=".{8,}" required title="8 characters minimum" /><br/>
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input id="confirm-password" type="password" name="confirm_password" required /><br/>
+
+                <!-- Startup Information -->
+                <label for="startup-name">Startup Name:</label>
+                <input id="startup-name" type="text" name="startup_name" required /><br/>
+
+                <label for="business-type">Business Type:</label>
+                <select id="business-type" name="business_type" required>
+                    <option value="Ayurveda">Ayurveda</option>
+                    <option value="Yoga">Yoga & Naturopathy</option>
+                    <option value="Unani">Unani</option>
+                    <option value="Siddha">Siddha</option>
+                    <option value="Homeopathy">Homeopathy</option>
+                </select><br/>
+
+                <label for="sector">Sector:</label>
+                <select id="sector" name="sector" required>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="Research">Research</option>
+                    <option value="Education">Education</option>
+                    <option value="Retail">Retail</option>
+                </select><br/>
+
+                <label for="date-incorporation">Date of Incorporation:</label>
+                <input id="date-incorporation" type="date" name="date_incorporation" required /><br/>
+
+                <label for="company-size">Company Size:</label>
+                <select id="company-size" name="company_size" required>
+                    <option value="1-10">1-10 Employees</option>
+                    <option value="11-50">11-50 Employees</option>
+                    <option value="51-200">51-200 Employees</option>
+                    <option value="201+">201+ Employees</option>
+                </select><br/>
+
+                <label for="business-address">Business Address:</label>
+                <textarea id="business-address" name="business_address" rows="3" required></textarea><br/>
+
+                <label for="website">Website:</label>
+                <input id="website" type="url" name="website" placeholder="https://yourstartup.com" /><br/>
+
+                <label for="funding">Funding Status:</label>
+                <select id="funding" name="funding_status" required>
+                    <option value="bootstrapped">Bootstrapped</option>
+                    <option value="seed">Seed Funding</option>
+                    <option value="series_a">Series A</option>
+                    <option value="series_b">Series B</option>
+                    <option value="series_c">Series C+</option>
+                </select><br/>
+
+                <!-- Document Upload -->
+                <label for="upload-id">Upload Business ID Document:</label>
+                <input id="upload-id" type="file" name="business_id_document" required /><br/>
+
+                <label for="upload-licence">Upload AYUSH License (if applicable):</label>
+                <input id="upload-licence" type="file" name="ayush_license" /><br/>
+
+                <label for="upload-certifications">Upload Certifications (if any):</label>
+                <input id="upload-certifications" type="file" name="certifications" multiple /><br/>
+
+                <!-- Account Type -->
+                <label for="personal-account"><input id="personal-account" type="radio" name="account_type" value="Personal" required /> Personal</label><br/>
+
+                <label for="business-account"><input id="business-account" type="radio" name="account_type" value="Business" /> Business</label><br/>
+
+                <!-- Terms and Conditions -->
+                <label for="terms-and-conditions">
+                    <input id="terms-and-conditions" type="checkbox" name="terms" required />
+                    I agree to the <a href="#">terms and conditions</a>
+                </label><br/>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AYUSH Startup Registration Portal | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <!-- JavaScript for client-side validation -->
+    <script src="registration.js"></script>
+</body>
+</html>
