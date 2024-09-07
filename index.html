@@ -18,19 +18,67 @@
     </header>
 
     <main>
-        <section id="login">
-            <h2>Startup Login</h2>
-            <form id="login-form" method="POST" action="/login">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <div class="container">
+        <div class="buttons">
+          <button id="register-btn">Register</button>
+          <button id="login-btn">Login</button>
+        </div>
+    
+        <div class="login-group">
+          <button class="small-button" id="govt-official">Government Official</button>
+          <button class="small-button" id="stakeholder-login">Stakeholder</button>
+          <button class="small-button" id="startup-login">Startup</button>
+        </div>
+    
+        <div class="register-group">
+          <button class="small-button" id="stakeholder-register">Stakeholder</button>
+          <button class="small-button" id="startup-register">Startup</button>
+        </div>
+      </div>
+    
+      <script>
+        
+        const loginBtn = document.getElementById('login-btn');
+        const registerBtn = document.getElementById('register-btn');
+    
+        
+        const loginGroup = document.querySelectorAll('.login-group .small-button');
+    
+        
+        const registerGroup = document.querySelectorAll('.register-group .small-button');
+    
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-
-                <button type="submit">Login</button>
-            </form>
-            <p>Don't have an account? <a href="register.html">Register here</a>.</p>
-        </section>
+        loginBtn.addEventListener('click', () => {
+          loginGroup.forEach((btn, index) => {
+            setTimeout(() => {
+              btn.classList.add('show');
+              btn.style.transform = 'translateX(-150px)'; 
+            }, index * 100); 
+          });
+          registerGroup.forEach((btn, index) => {
+            setTimeout(() => {
+                btn.classList.remove('show');
+                btn.style.transform = 'translateX(-150px)';
+            }, index * 100);
+            })
+        });
+    
+      
+        registerBtn.addEventListener('click', () => {
+          registerGroup.forEach((btn, index) => {
+            setTimeout(() => {
+              btn.classList.add('show');
+              btn.style.transform = 'translateX(150px)'; 
+            }, index * 100); 
+          });
+          loginGroup.forEach((btn, index) => {
+            setTimeout(() => {
+                btn.classList.remove('show');
+                btn.style.transform = 'translateX(150px)';
+            }, index * 100);
+            })
+        });
+      </script>
     </main>
 
     <footer>
