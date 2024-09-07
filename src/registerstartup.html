@@ -59,20 +59,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="state">State:</label>
-                    <select id="state" name="state" disabled required>
-                        <option value="">Select State</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="district">District:</label>
-                    <select id="district" name="district" disabled required>
-                        <option value="">Select District</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
                   <label for="organization-name">Organization Name:</label>
                   <input id="organization-name" type="text" name="organization_name" required>
               </div>
@@ -130,6 +116,25 @@
                   <input id="website" type="url" name="website" placeholder="https://yourstartup.com">
               </div>
 
+              <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input id="mobile" type="tel" name="mobile" required pattern="[0-9]{10}">
+            </div>
+
+              <div class="form-group">
+                <label for="state">State:</label>
+                <select id="state" name="state" disabled required>
+                    <option value="">Select State</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="district">District:</label>
+                <select id="district" name="district" disabled required>
+                    <option value="">Select District</option>
+                </select>
+            </div>
+
                 <div class="form-group">
                     <label for="address">Address:</label>
                     <textarea id="address" name="address" rows="3" required></textarea>
@@ -138,11 +143,6 @@
                 <div class="form-group">
                     <label for="pincode">Pincode:</label>
                     <input id="pincode" type="tel" name="pincode" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="mobile">Mobile Number:</label>
-                    <input id="mobile" type="tel" name="mobile" required pattern="[0-9]{10}">
                 </div>
 
                 <div class="form-group">
