@@ -40,8 +40,8 @@
                 <label for="email">Email:</label>
                 <input id="email" type="email" name="email" required /><br/>
 
-                <label for="phone">Phone Number:</label>
-                <input id="phone" type="tel" name="phone" required pattern="[0-9]{10}" /><br/>
+                <label for="contact_number">Contact Number:</label>
+                <input id="contact_number" type="tel" name="contact" required pattern="[0-9]{10}" /><br/>
 
                 <label for="country">Country:</label>
                 <select id="country" name="country" required>
@@ -88,8 +88,8 @@
                 <label for="organization-name">Organization Name:</label>
                 <input id="organization-name" type="text" name="organization_name" required /><br/>
 
-                <label for="date-incorporation">Date of Incorporation:</label>
-                <input id="date-incorporation" type="date" name="date_incorporation" required /><br/>
+                <label for="date-registration">Date of Registration:</label>
+                <input id="date-registration" type="date" name="date_registration" required /><br/>
 
                 <label for="company-size">Company Size:</label>
                 <select id="company-size" name="company_size" required>
@@ -99,25 +99,20 @@
                     <option value="201+">201+ Employees</option>
                 </select><br/>
 
-                <label for="business-address">Business Address:</label>
-                <textarea id="business-address" name="business_address" rows="3" required></textarea><br/>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" required></textarea><br/>
 
                 <label for="website">Website:</label>
                 <input id="website" type="url" name="website" placeholder="https://yourstartup.com" /><br/>
                 
-                <label for="upload-id">Upload Business ID Document:</label>
-                <input id="upload-id" type="file" name="business_id_document" required /><br/>
+                <label for="pincode">Pincode: </label>
+                <input id="pincode" type="tel" name="pincode" required /><br/>
 
-                <label for="upload-licence">Upload AYUSH License (if applicable):</label>
-                <input id="upload-licence" type="file" name="ayush_license" /><br/>
+                <label for="Mobile">Mobile Number:</label>
+                <input id="Mobile" type="tel" name="Mobile" required pattern="[0-9]{10}" /><br/>
 
-                <label for="upload-certifications">Upload Certifications (if any):</label>
-                <input id="upload-certifications" type="file" name="certifications" multiple /><br/>
-
-                <!-- Account Type -->
-                <label for="personal-account"><input id="personal-account" type="radio" name="account_type" value="Personal" required /> Personal</label><br/>
-
-                <label for="business-account"><input id="business-account" type="radio" name="account_type" value="Business" /> Business</label><br/>
+                <label for="copyregistration">Copy of Registration:</label>
+                <input id="copyregistration" type="file" name="copyregistration" /><br/>
 
                 <label for="new-password">Create a Password:</label>
                 <input id="new-password" type="password" name="password" pattern=".{8,}" required title="8 characters minimum" /><br/>
@@ -125,10 +120,24 @@
                 <label for="confirm-password">Confirm Password:</label>
                 <input id="confirm-password" type="password" name="confirm_password" required /><br/>
 
-                <label for="startup-name">Startup Name:</label>
-                <input id="startup-name" type="text" name="startup_name" required /><br/>
+                <label for="name-account">Name as per the Bank Account:</label>
+                <input id="accountname" type="text" name="accountname" required /><br/>
 
-                <!-- Terms and Conditions -->
+                <label for="Number-account">Account Number: </label>
+                <input id="accountnumber" type="text" name="accountnumber" required /><br/>
+
+                <label for="bankname">Bank Name: </label>
+                <input id="bankname" type="text" name="bankname" required /><br/>
+
+                <label for="">Branch Name:</label>
+                <input id="branchname" type="text" name="branchname" required /><br/>
+
+                <label for="IFSCcode">IFSC Code:</label>
+                <input id="IFSCcode" type="text" name="IFSCcode" required /><br/>
+                
+                <label for="MICRcode">MICR Code:</label>
+                <input id="MICRcode" type="text" name="MICRcode" required /><br/>
+
                 <label for="terms-and-conditions">
                     <input id="terms-and-conditions" type="checkbox" name="terms" required />
                     I agree to the <a href="#">terms and conditions</a>
@@ -143,7 +152,6 @@
         <p>&copy; 2024 AYUSH Startup Registration Portal | <a href="contact.html">Contact Us</a></p>
     </footer>
 
-    <!-- JavaScript for client-side validation -->
     <script src="registerstartup.js"></script>
 </body>
 </html>
