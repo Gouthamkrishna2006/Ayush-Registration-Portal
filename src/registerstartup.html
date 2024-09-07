@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startup Registration - AYUSH Registration Portal</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
+
 <body>
     <header>
         <h1>AYUSH Startup Registration Portal</h1>
@@ -60,9 +63,9 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="organization-name">Organization Name:</label>
-                  <input id="organization-name" type="text" name="organization_name" required>
-              </div>
+                    <label for="organization-name">Organization Name:</label>
+                    <input id="organization-name" type="text" name="organization_name" required>
+                </div>
 
                 <div class="form-group">
                     <label for="business-type">Business Type:</label>
@@ -108,6 +111,7 @@
                 <div class="form-group">
                     <label for="company-size">Company Size:</label>
                     <select id="company-size" name="company_size" required>
+                        <option value="" disabled selected>Select Number of Employees</option>
                         <option value="1-10">1-10 Employees</option>
                         <option value="11-50">11-50 Employees</option>
                         <option value="51-200">51-200 Employees</option>
@@ -116,28 +120,28 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="website">Website:</label>
-                  <input id="website" type="url" name="website" placeholder="https://yourstartup.com">
-              </div>
+                    <label for="website">Website:</label>
+                    <input id="website" type="url" name="website" placeholder="https://yourstartup.com">
+                </div>
 
-              <div class="form-group">
-                <label for="mobile">Mobile Number:</label>
-                <input id="mobile" type="tel" name="mobile" required pattern="[0-9]{10}">
-            </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile Number:</label>
+                    <input id="mobile" type="tel" name="mobile" required pattern="[0-9]{10}">
+                </div>
 
-            <div class="form-group">
-              <label for="state">State:</label>
-              <select id="state" name="state" required>
-                  <option value="">Select State</option>
-              </select>
-          </div>
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <select id="state" name="state" required>
+                        <option value="">Select State</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label for="district">District:</label>
-                <select id="district" name="district" disabled required>
-                    <option value="">Select District</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="district">District:</label>
+                    <select id="district" name="district" disabled required>
+                        <option value="">Select District</option>
+                    </select>
+                </div>
 
                 <div class="form-group">
                     <label for="address">Address:</label>
@@ -151,10 +155,15 @@
 
                 <div class="form-group">
                     <label for="copyregistration">Copy of Registration:</label>
-                    <input id="copyregistration" type="file" name="copyregistration">
+                    <p id="file-name"></p>
+
                 </div>
 
                 <div class="form-group">
+                    <label for="file-upload" class="custom-file-upload">
+                        Upload File
+                    </label>
+                    <input id="file-upload" type="file" />
                 </div>
 
                 <div class="form-group">
@@ -193,23 +202,27 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="mirc">MIRC Code:</label>
-                  <input id="mirc" type="text" name="mirc" required>
-              </div>
-              <div class="form-group">
-                <label>
-                <input type="checkbox" name="terms" required>
-                I have read, understood, and agree to the <a href="terms-and-conditions.html">Terms and Conditions</a>, <a href="privacy-policy.html">Privacy Policy</a>, and <a href="cookie-policy.html">Cookie Policy</a>.
-            </label>
-            </div>
-              <div class="button-container">
-                <button type="submit">Register</button>
-              </div>
+                    <label for="mirc">MIRC Code:</label>
+                    <input id="mirc" type="text" name="mirc" required>
+                </div>
+                <div class="form-group" style="margin: auto auto">
+                    <label>
+                        <input type="checkbox" name="terms" required> I have read, understood, and agree to the <a href="terms-and-conditions.html">Terms and Conditions</a>.
+                    </label>
+                </div>
+                <div class="form-group" , style="margin: 0 auto;">
+                    <div class="g-recaptcha" data-sitekey="6LemojYqAAAAACnggBkhRp8M0IaO3ut-by6VeLfU"></div>
+                </div>
+                <div class="button-container">
+                    <button type="submit">Register</button>
+                </div>
             </form>
         </section>
     </main>
     <footer>
         &copy; 2024 AYUSH Registration Portal
     </footer>
+    <script src="registerstartup.js"></script>
 </body>
+
 </html>
