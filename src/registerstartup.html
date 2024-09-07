@@ -54,10 +54,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="country">Country:</label>
-                    <select id="country" name="country" required>
-                        <option value="">Select Country</option>
-                    </select>
+                    <label for="aadhar">Aadhar Card Number:</label>
+                    <input id="contact_number" type="tel" name="contact" required pattern="[0-9]{12}">
                 </div>
 
                 <div class="form-group">
@@ -73,6 +71,11 @@
                         <option value="">Select District</option>
                     </select>
                 </div>
+
+                <div class="form-group">
+                  <label for="organization-name">Organization Name:</label>
+                  <input id="organization-name" type="text" name="organization_name" required>
+              </div>
 
                 <div class="form-group">
                     <label for="business-type">Business Type:</label>
@@ -108,11 +111,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="organization-name">Organization Name:</label>
-                    <input id="organization-name" type="text" name="organization_name" required>
-                </div>
-
-                <div class="form-group">
                     <label for="date-registration">Date of Registration:</label>
                     <input id="date-registration" type="date" name="date_registration" required>
                 </div>
@@ -128,13 +126,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="address">Address:</label>
-                    <textarea id="address" name="address" rows="3" required></textarea>
-                </div>
+                  <label for="website">Website:</label>
+                  <input id="website" type="url" name="website" placeholder="https://yourstartup.com">
+              </div>
 
                 <div class="form-group">
-                    <label for="website">Website:</label>
-                    <input id="website" type="url" name="website" placeholder="https://yourstartup.com">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
                 </div>
 
                 <div class="form-group">
@@ -150,6 +148,9 @@
                 <div class="form-group">
                     <label for="copyregistration">Copy of Registration:</label>
                     <input id="copyregistration" type="file" name="copyregistration">
+                </div>
+
+                <div class="form-group">
                 </div>
 
                 <div class="form-group">
@@ -191,12 +192,18 @@
                   <label for="mirc">MIRC Code:</label>
                   <input id="mirc" type="text" name="mirc" required>
               </div>
-
+              <div class="form-group">
+                <label>
+                <input type="checkbox" name="terms" required>
+                I have read, understood, and agree to the <a href="terms-and-conditions.html">Terms and Conditions</a>, <a href="privacy-policy.html">Privacy Policy</a>, and <a href="cookie-policy.html">Cookie Policy</a>.
+            </label>
+            </div>
+              <div class="button-container">
                 <button type="submit">Register</button>
+              </div>
             </form>
         </section>
     </main>
-
     <footer>
         &copy; 2024 AYUSH Registration Portal
     </footer>
