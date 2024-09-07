@@ -48,3 +48,11 @@ fileInput.addEventListener('change', function() {
         fileNameDisplay.textContent = 'No file chosen';
     }
 });
+
+document.getElementById('startup-reg').addEventListener('submit', function(event) {
+    const passw = document.getElementById('new-password').value;
+    const confpassw = document.getElementById('confirm-password').value;
+    if(passw !== confpassw) {
+        window.alert("Passwords do not match!")
+    }
+});
