@@ -61,6 +61,10 @@ main {
     margin: auto;
 }
 
+#registration h2{
+    padding-bottom: 2rem;
+}
+
 
 #login,#registration {
     background-color: #fff;
@@ -155,6 +159,9 @@ button:hover {
 .button-container {
     text-align: center;
     width: 100%;
+}
+
+.spanner {
     grid-column: span 2;
 }
 
@@ -217,11 +224,11 @@ input[type="file"] {
   }
 
   .login-group .small-button {
-    right: -150px; /* Start off the screen on the right */
+    right: -150px;
   }
 
   .register-group .small-button {
-    left: -150px; /* Start off the screen on the left */
+    left: -150px;
   }
 
   .show {
@@ -235,7 +242,7 @@ input[type="file"] {
     main {
         max-width: 75%;
     }
-    .button-container {
+    .spanner {
         grid-column: span 1;
     }
 }
