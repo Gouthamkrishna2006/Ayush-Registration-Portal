@@ -140,3 +140,45 @@ footer {
     bottom: 0;
     width: 100%;
 }
+.container {
+    text-align: center;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.5s ease;
+  }
+
+  .small-button {
+    opacity: 0;
+    position: absolute;
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #28a745;
+    top: 50px;
+    transform: translateX(0);
+    transition: opacity 0.5s ease, transform 0.7s ease;
+  }
+
+  .login-group .small-button {
+    right: -150px; /* Start off the screen on the right */
+  }
+
+  .register-group .small-button {
+    left: -150px; /* Start off the screen on the left */
+  }
+
+  .show {
+    opacity: 1;
+  }
