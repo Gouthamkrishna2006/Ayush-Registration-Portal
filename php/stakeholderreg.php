@@ -20,6 +20,7 @@ $contact_number = $_POST['contact'];
 $aadhar = $_POST['aadhar'];
 $new_password = $_POST['password'];
 
+
 $stmt = $conn->prepare("INSERT INTO stakeholderdata VALUES (?, ?, ?, ?, ?, ?, ?)");
 
 if (!$stmt) {
@@ -30,7 +31,7 @@ $stmt->bind_param("sssssii",
     $first_name, $last_name, $email, $new_password, $gender, $contact_number, $aadhar);
 
 
-if ($stmt->execute()) {
+    if ($stmt->execute()) {
     header("Location: ../../index.html");
     exit();  
 } else {
