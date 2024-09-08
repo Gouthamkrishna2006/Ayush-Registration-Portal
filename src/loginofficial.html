@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stakeholder Login - AYUSH Registration Portal</title>
+    <title>Official Login - AYUSH Registration Portal</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
@@ -22,7 +22,7 @@
         <section id="login">
             <h2 style="text-align: center">Official Login</h2>
             <br>
-            <form id="login-form" method="POST" action="../php/loginoff.php">
+            <form id="login-form" method="POST" action="/login">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
 
@@ -32,7 +32,6 @@
                 <div class="centerer">
                     <div class="g-recaptcha" data-sitekey="6LemojYqAAAAACnggBkhRp8M0IaO3ut-by6VeLfU"></div>
                 <br>
-                
                 <button class = "button-login", type="submit">Login</button>
                 </div>
             </form>
