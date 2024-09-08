@@ -68,7 +68,7 @@ for ($i = 0; $i < strlen($email); $i++) {
 
 $regnum = strval($registration1) . "-" . strval($registration2);
 
-$stmt = $conn->prepare("INSERT INTO userdata (first_name, last_name, gender, email, contact_number, state, district, buisness_type, sector, sub_sector, organization_values, data_registration, company_size, address, website, pincode, mobile, password, accountname, accountnumber, bankname, branchname, ifsc, mirc, regnum, aadhar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO userdata (first_name, last_name, gender, email, contact_number, state, district, business_type, sector, sub_sector, organization_name, date_registration, company_size, address, website, pincode, mobile, password, accountname, accountnumber, bankname, branchname, ifsc, mirc, regnum, aadhar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 if (!$stmt) {
     die("Prepare failed: " . $conn->error);

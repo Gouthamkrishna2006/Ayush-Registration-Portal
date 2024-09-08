@@ -20,7 +20,7 @@ $contact_number = $_POST['contact'];
 $aadhar = $_POST['aadhar'];
 $new_password = $_POST['password'];
 
-$stmt = $conn->prepare("INSERT INTO stakeholderdata VALUES (?, ?, ?, ?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO stakeholderdata (first_name, last_name, email, password, gender, contact_number, aadhar) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
 if (!$stmt) {
     die("Prepare failed: " . $conn->error);
