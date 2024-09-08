@@ -153,6 +153,26 @@
         <p>&copy; 2024 AYUSH Startup Registration Portal</p>
     </footer>
     <script>
+        var addstake = document.getElementById("addstake");
+
+        var btn = document.getElementById("addstakeholder");
+
+        var span = document.getElementsByClassName("closestake")[0];
+
+
+        btn.onclick = function() {
+            addstake.style.display = "block";
+        }
+
+        span.onclick = function() {
+            addstake.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == addstake) {
+                addstake.style.display = "none";
+            }
+        }
         document.addEventListener('DOMContentLoaded', () => {
             const main =document.getElementsByTagName('main');
             const footer =document.getElementsByTagName('footer');
