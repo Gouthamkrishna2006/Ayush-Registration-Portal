@@ -9,29 +9,29 @@
 <body>
     <header>
         <h1>AYUSH Startup Portal</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Profile</a></li>
-                <li><a href="..//src/loginstartup.html">Stakeholder</a></li>
-                <li><a href="status.html">Check Status</a></li>
-                <li><a href="support.html">Support</a></li>
-            </ul>
-        </nav>
+        <button id="backbtn">Registration Number: </button>
+
     </header>
 
     <main>
-        <?php include 'startup-details.php'; ?>
-
         <div>
-            <h2>Startup Details</h2>
-            <p><strong>Name:</strong> <?php echo $startup_data['name']; ?></p>
-            <p><strong>Approval Status:</strong> <?php echo $startup_data['status']; ?></p>
-            <p><strong>Stakeholders:</strong> <?php echo $startup_data['stakeholders']; ?></p>
+            <h1>Startups</h1>
         </div>
     </main>
 
     <footer>
         <p>&copy; 2024 AYUSH Startup Registration Portal</p>
     </footer>
+    <script>
+        document.getElementById('backbtn').addEventListener('click', function() {
+        const text = this.textContent;
+        navigator.clipboard.writeText(text).then(function() {
+            console.log('Text copied to clipboard');
+        }).catch(function(err) {
+            console.error('Failed to copy text: ', err);
+        });
+    });
+
+    </script>
 </body>
 </html>
