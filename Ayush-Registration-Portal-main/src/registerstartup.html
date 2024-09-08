@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Registration - AYUSH Registration Portal</title>
+    <link rel="stylesheet" href="..//styles/styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>AYUSH Startup Registration Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="..//src/registerstartup.html">Register</a></li>
+                <li><a href="..//src/loginstartup.html">Login</a></li>
+                <li><a href="status.html">Check Status</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="registration">
+            <h2>Startup Registration Form</h2>
+            <form method="post" action="../src/startupreg.php" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="first-name">First Name:</label>
+                    <input id="first-name" type="text" name="first_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="last-name">Last Name:</label>
+                    <input id="last-name" type="text" name="last_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="no">Prefer not to say</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input id="email" type="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact_number">Contact Number:</label>
+                    <input id="contact_number" type="tel" name="contact" required pattern="[0-9]{10}">
+                </div>
+
+                <div class="form-group">
+                    <label for="aadhar">Aadhar Card Number:</label>
+                    <input id="aadhar" type="tel" name="aadhar" required pattern="[0-9]{12}">
+                </div>
+
+                <div class="form-group">
+                  <label for="new-password">Create a Password:</label>
+                  <input id="new-password" type="password" name="password" pattern=".{8,}" required title="8 characters minimum">
+              </div>
+
+              <div class="form-group">
+                  <label for="confirm-password">Confirm Password:</label>
+                  <input id="confirm-password" type="password" name="confirm_password" required>
+              </div>
+
+                <div class="form-group">
+                    <label for="organization-name">Organization Name:</label>
+                    <input id="organization-name" type="text" name="organization_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="business-type">Business Type:</label>
+                    <select id="business-type" name="business_type" required>
+                        <option value="" disabled selected>Select Buisness Type</option>
+                        <option value="Ayurveda">Ayurveda</option>
+                        <option value="Yoga">Yoga & Naturopathy</option>
+                        <option value="Unani">Unani</option>
+                        <option value="Siddha">Siddha</option>
+                        <option value="Homeopathy">Homeopathy</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sector">Organization Type:</label>
+                    <select id="sector" name="sector" required>
+                        <option value="" disabled selected>Organization Type</option>
+                        <option value="Government">Government Organization</option>
+                        <option value="Private">Private Organization</option>
+                        <option value="Non Profit">Non Profit Non Government Organization</option>
+                        <option value="Individual">Individual</option>
+                        <option value="Autonomous">Autonomous Body</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sub-sector">Sub Organization Type:</label>
+                    <select id="sub-sector" name="sub_sector" required>
+                        <option value="" disabled selected>Select Sub-Organization Type</option>
+                        <option value="Government">Government Organization</option>
+                        <option value="Private">Private Organization</option>
+                        <option value="Non Profit">Non Profit Non Government Organization</option>
+                        <option value="Individual">Individual</option>
+                        <option value="Autonomous">Autonomous Body</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date-registration">Date of Registration:</label>
+                    <input id="date-registration" type="date" name="date_registration" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company-size">Company Size:</label>
+                    <select id="company-size" name="company_size" required>
+                        <option value="" disabled selected>Select Number of Employees</option>
+                        <option value="1-10">1-10 Employees</option>
+                        <option value="11-50">11-50 Employees</option>
+                        <option value="51-200">51-200 Employees</option>
+                        <option value="201+">200+ Employees</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="website">Website:</label>
+                    <input id="website" type="url" name="website" placeholder="https://yourstartup.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number:</label>
+                    <input id="mobile" type="tel" name="mobile" required pattern="[0-9]{10}">
+                </div>
+
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <select id="state" name="state" required>
+                        <option value="">Select State</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="district">District:</label>
+                    <select id="district" name="district" disabled required>
+                        <option value="">Select District</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="1" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="pincode">Pincode:</label>
+                    <input id="pincode" type="tel" name="pincode" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="copyregistration">Copy of Registration:</label>
+                    <p id="file-name"></p>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="file-upload" class="custom-file-upload">
+                        Upload File
+                    </label>
+                    <input id="file-upload" type="file" />
+                </div>
+
+                <div class="form-group">
+                    <label for="accountname">Name as per the Bank Account:</label>
+                    <input id="accountname" type="text" name="accountname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="accountnumber">Account Number:</label>
+                    <input id="accountnumber" type="text" name="accountnumber" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="bankname">Bank Name:</label>
+                    <input id="bankname" type="text" name="bankname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="branchname">Branch Name:</label>
+                    <input id="branchname" type="text" name="branchname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ifsc">IFSC Code:</label>
+                    <input id="ifsc" type="text" name="ifsc" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mirc">MIRC Code:</label>
+                    <input id="mirc" type="text" name="mirc" required>
+                </div>
+                <div class="form-group spanner" style="margin: auto auto">
+                    <label>
+                        <input type="checkbox" name="terms" required> I have read, understood, and agree to the <a href="terms-and-conditions.html">Terms and Conditions</a>.
+                    </label>
+                </div>
+                <div class="form-group spanner" , style="margin: 0 auto;">
+                    <div class="g-recaptcha" data-sitekey="6LemojYqAAAAACnggBkhRp8M0IaO3ut-by6VeLfU"></div>
+                </div>
+                <div class="button-container spanner">
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 AYUSH Registration Portal
+    </footer>
+    <script src="..//js/registerstartup.js"></script>
+</body>
+
+</html>

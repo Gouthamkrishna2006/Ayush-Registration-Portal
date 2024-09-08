@@ -9,9 +9,9 @@ $first_name = $_POST['first-name'];
 $last_name = $_POST['last-name'];
 $gender = $_POST['gender'];
 $email = $_POST['email'];
-$contact_number = $_POST['contact_number'];
+$contact_number = $_POST['contact'];
 $aadhar = $_POST['aadhar'];
-$new_password = $_POST['new-password'];
+$new_password = $_POST['password'];
 $organization_name = $_POST['organization-name'];
 $business_type = $_POST['business-type'];
 $sector = $_POST['sector'];
@@ -50,8 +50,7 @@ for ($i = 0; $i < strlen($regnum); $i++) {
 }
 
 
-$stmt = $conn->prepare("INSERT INTO userdata (first_name, last_name, gender, email, contact_number, state, district, business_type, sector, sub_sector, organization_name, date_registration, company_size, address, website, pincode, mobile, new_password, accountname, accountnumber, bankname, branchname, ifsc, mirc, encrypted, aadhar) 
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO userdata VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 if (!$stmt) {
     die("Prepare failed: " . $conn->error);
@@ -74,4 +73,3 @@ if ($stmt->execute()) {
 
 $stmt->close();
 $conn->close();
->
