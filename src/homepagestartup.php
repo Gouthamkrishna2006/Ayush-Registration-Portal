@@ -12,15 +12,14 @@
         <button id="backbtn" class = "disnone">Back</button>
 
     </header>
-
-    <main>
+    <main style="min-height: 100vh;">
         <div>
             <button class="small-button start1" id="profile">View Profile</button>
             <button class="small-button start2" id="status">Check Status</button>
             <button class="small-button start3" id="stakeholders">View Stakeholders</button>
         </div>
-        <div class = "show1">
-            <h1>Profile</h1>
+        <div class = "show1 shadow" style="margin-bottom:1000px;width: 40%;">
+            <h1 style="text-align: center;">Profile</h1>
             <?php
             $servername = "localhost";
             $username = "root";
@@ -70,8 +69,8 @@
             $conn->close();
             ?>
         </div>
-        <div class = "show2">
-            <h1>Status</h1>
+        <div class = "show2 shadow" style="margin-bottom:1000px;width: 30%;">
+            <h1 style="text-align: center;">Status</h1>
             <?php
             $servername = "localhost";
             $username = "root";
@@ -133,49 +132,30 @@
         </div>
         <div class = "show3">
             <h1>Stakeholders</h1>
-            <button id="addstakeholder">Add New Stakeholder</button>
-            <div id="addstake" class="addstake">
-                <div class="addstake-content">
-                    <span class="closestake">&times;</span>
+               <button id="addstakeholder">Add New Stakeholder</button>
+              <div id="addstake" class="addstake">
+                    <div class="addstake-content">
+                      <span class="closestake">&times;</span>
 
-                    <form method = 'post' enctype="multipart/form-data" action = '../php/addstake.php'>
-                    <label for="stake-id">Enter Stakeholder ID:</label>
-                    <input id="stake-id" type="text" name="stake_id" required>
-                    <button type="submit">Add Stakeholder</button>
-                    </form>
+                       <form method = 'post' enctype="multipart/form-data" action = '../php/addstake.php'>
+                       <label for="stake-id">Enter Stakeholder ID:</label>
+                       <input id="stake-id" type="text" name="stake_id" required>
+                       <button type="submit">Add Stakeholder</button>
+                        </form>
+                    </div>
+
                 </div>
-
-            </div>
         </div>
         <div>
         </div>
     </main>
-
     <footer>
         <p>&copy; 2024 AYUSH Startup Registration Portal</p>
     </footer>
     <script>
-        var addstake = document.getElementById("addstake");
-
-        var btn = document.getElementById("addstakeholder");
-
-        var span = document.getElementsByClassName("closestake")[0];
-
-
-        btn.onclick = function() {
-            addstake.style.display = "block";
-        }
-
-        span.onclick = function() {
-            addstake.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == addstake) {
-                addstake.style.display = "none";
-            }
-        }
         document.addEventListener('DOMContentLoaded', () => {
+            const main =document.getElementsByTagName('main');
+            const footer =document.getElementsByTagName('footer');
             const profile = document.getElementById('profile');
             const status = document.getElementById('status');
             const stakeholders = document.getElementById('stakeholders');
@@ -203,12 +183,16 @@
                     back.classList.remove('disnone');
                 } else {
                     back.classList.add('disnone')
+                    main.style.minHeight = "auto";
+                    btn.classList.remove('footer-register');
                 }
                 
             }
 
             profile.addEventListener('click', () => {
                 toggleButtons(show1, btngroup, '-50%,-50%','-500%,-50%');
+                main.style.minHeight = "90vh";
+                btn.classList.add('footer-register');
             });
 
             status.addEventListener('click', () => {
