@@ -1,5 +1,12 @@
 <?php
-$conn = new mysqli('localhost', 'root', '', 'ayushtest');
+$servername = "localhost";
+$username = "root"; 
+$password = ""; 
+$dbname = "ayushtest"; 
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
