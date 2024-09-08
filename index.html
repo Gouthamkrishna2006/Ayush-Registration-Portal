@@ -36,6 +36,11 @@
                 <a href = "src/registerstartup.html"><button class="small-button sm12" id="startup-register">Startup Register</button></a>
                 <a href = "src/registerstakeholder.html"><button class="small-button sm22" id="stakeholder-register">Stakeholder Register</button></a>
             </div>
+
+            <div id = "mission", class ="shadow movement">
+                <h2>Lorem Ipsum</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
         </div>
     </main>
 
@@ -47,8 +52,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             const loginBtn = document.getElementById('login-btn');
             const registerBtn = document.getElementById('register-btn');
+            const mission = document.getElementById('mission');
             const registerGroup = document.querySelectorAll('.sm1, .sm2, .sm3');
             const loginGroup = document.querySelectorAll('.sm12, .sm22');
+            let count = 0;
 
             function toggleButtons(showGroup, hideGroup, direction, direction2) {
                 showGroup.forEach((btn, index) => {
@@ -56,12 +63,24 @@
                         btn.classList.add('show');
                         btn.style.transform = `translate(${direction})`;
                     }, index * 100);
+                if (count === 0) {
+                    mission.style.transform = `translateY(-1000%)`;
+                    mission.style.opacity = "0";
+                } else {
+                    count++
+                }
                 });
                 hideGroup.forEach((btn, index) => {
                     setTimeout(() => {
                         btn.classList.remove('show');
                         btn.style.transform = `translate(${direction2})`;
                     }, index * 100);
+                if (count === 0) {
+                    mission.style.transform = `translateY(200%)`;
+                    mission.style.opacity = "0";
+                } else {
+                    count++
+                }
                 });
             }
 
