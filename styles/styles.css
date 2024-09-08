@@ -89,11 +89,15 @@ main {
     padding-bottom: 2rem;
 }
 
-#login,#registration {
+#login,#registration, .shadow {
     background-color: #fff;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.movement{
+    transition: opacity 0.5s ease, transform 1s ease, background-color 0.3s ease;
 }
 
 #login h2 {
