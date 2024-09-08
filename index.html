@@ -1,88 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startup Login - AYUSH Registration Portal</title>
-    <link rel="stylesheet" href=".//styles/styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
+
 <body>
     <header>
         <h1>AYUSH Startup Portal</h1>
         <nav>
             <ul>
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="machaaaaa">Support</a></li>
+                <li><a href="./support.html">Support</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <div class="container">
-        <div class="buttons">
-          <button id="register-btn">Register</button>
-          <button id="login-btn">Login</button>
-        </div>
-    
-        <div class="login-group">
-          <button class="small-button" id="govt-official">Government Official</button>
-          <button class="small-button" id="stakeholder-login">Stakeholder</button>
-          <button class="small-button" id="startup-login">Startup</button>
-        </div>
-    
-        <div class="register-group">
-          <button class="small-button" id="stakeholder-register">Stakeholder</button>
-          <button class="small-button" id="startup-register">Startup</button>
-        </div>
-      </div>
-    
-      <script>
-        
-        const loginBtn = document.getElementById('login-btn');
-        const registerBtn = document.getElementById('register-btn');
-    
-        
-        const loginGroup = document.querySelectorAll('.login-group .small-button');
-    
-        
-        const registerGroup = document.querySelectorAll('.register-group .small-button');
-    
+            <div class="buttons">
+                <button id = "login-btn">Register</button>
+                <button id = "register-btn">Login</button>
+            </div>
 
-        loginBtn.addEventListener('click', () => {
-          loginGroup.forEach((btn, index) => {
-            setTimeout(() => {
-              btn.classList.add('show');
-              btn.style.transform = 'translateX(-150px)'; 
-            }, index * 100); 
-          });
-          registerGroup.forEach((btn, index) => {
-            setTimeout(() => {
-                btn.classList.remove('show');
-                btn.style.transform = 'translateX(-150px)';
-            }, index * 100);
-            })
-        });
-    
-      
-        registerBtn.addEventListener('click', () => {
-          registerGroup.forEach((btn, index) => {
-            setTimeout(() => {
-              btn.classList.add('show');
-              btn.style.transform = 'translateX(150px)'; 
-            }, index * 100); 
-          });
-          loginGroup.forEach((btn, index) => {
-            setTimeout(() => {
-                btn.classList.remove('show');
-                btn.style.transform = 'translateX(150px)';
-            }, index * 100);
-            })
-        });
-      </script>
+            <div class="animate_group">
+                <button class="small-button sm1" id="startup-login">Startup Login</button>
+                <button class="small-button sm2" id="stakeholder-login">Stakeholder Login</button>
+                <button class="small-button sm3" id="govt-official">Government Official Login</button>
+            </div>
+
+            <div class="animate_group">
+                <button class="small-button sm12" id="startup-register">Startup Register</button>
+                <button class="small-button sm22" id="stakeholder-register">Stakeholder Register</button>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 AYUSH Startup Registration Portal <a href="contact.html">Contact Us</a></p>
+        <p>&copy; 2024 AYUSH Startup Registration Portal</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginBtn = document.getElementById('login-btn');
+            const registerBtn = document.getElementById('register-btn');
+            const registerGroup = document.querySelectorAll('.sm1, .sm2, .sm3');
+            const loginGroup = document.querySelectorAll('.sm12, .sm22');
+
+            function toggleButtons(showGroup, hideGroup, direction, direction2) {
+                showGroup.forEach((btn, index) => {
+                    setTimeout(() => {
+                        btn.classList.add('show');
+                        btn.style.transform = `translate(${direction})`;
+                    }, index * 100);
+                });
+                hideGroup.forEach((btn, index) => {
+                    setTimeout(() => {
+                        btn.classList.remove('show');
+                        btn.style.transform = `translate(${direction2})`;
+                    }, index * 100);
+                });
+            }
+
+            loginBtn.addEventListener('click', () => {
+                toggleButtons(loginGroup, registerGroup, '-50%,-50%','450%,50%');
+            });
+
+            registerBtn.addEventListener('click', () => {
+                toggleButtons(registerGroup, loginGroup, '-50%,-50%','-500%,-50%');
+            });
+        });
+    </script>
 </body>
+
 </html>
