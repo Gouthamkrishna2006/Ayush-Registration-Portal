@@ -105,7 +105,6 @@ main {
 }
 
 
-
 label {
     display: block;
     font-weight: bold;
@@ -229,29 +228,53 @@ input[type="file"] {
     margin-bottom: 20px;
   }
 
+
 .small-button {
     opacity: 0;
     position: absolute;
-    padding: 10px 20px;
     font-size: 1rem;
+    width : 20%;
     background-color: #00796b;
-    top: 50px;
-    transform: translateX(0);
     transition: opacity 0.5s ease, transform 0.7s ease, background-color 0.3s ease;
   }
 
-.login-group .small-button {
-    right: -150px;
-    top: 50%;
-    transform: translateX(100%) translateY(-50%);
+#login-btn{
+    display: block;
+    margin: 0 0 0 auto;
+}
+
+#register-btn{
+    display: block;
+    margin: 0 auto 0 0;
+
+}
+
+.animate_group{
+    left: 50%;
   }
 
-  .register-group .small-button {
-    left: -150px;
+  .sm1{
     top: 50%;
-    transform: translateX(-100%) translateY(-50%);
+    transform: translate(450%,-50%);
+  }
+  .sm2{
+    top:60%;
+    transform: translate(450%,-50%);
+  }
+  .sm3{
+    top:70%;
+    transform: translate(450%,-50%);
   }
 
+  .sm12 {
+    top: 50%;
+    transform: translate(-500%,-50%);
+  }
+
+  .sm22{
+    top:60%;
+    transform: translate(-500%,-50%);
+  }
   .show {
     opacity: 1;
   }
