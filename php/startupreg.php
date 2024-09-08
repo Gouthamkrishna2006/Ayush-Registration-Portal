@@ -20,9 +20,9 @@ $date_registration = $_POST['date-registration'];
 $company_size = $_POST['company-size'];
 $website = $_POST['website'];
 $mobile = $_POST['mobile'];
-$state = $_POST['state'];
+$states = $_POST['state'];
 $district = $_POST['district'];
-$address = $_POST['address'];
+$address1 = $_POST['address'];
 $pincode = $_POST['pincode'];
 $accountname = $_POST['accountname'];
 $accountnumber = $_POST['accountnumber'];
@@ -31,7 +31,6 @@ $branchname = $_POST['branchname'];
 $ifsc = $_POST['ifsc'];
 $mirc = $_POST['mirc'];
 
-$regnum = $email;
 $encrypted = '';
 $passlist = [];
 
@@ -40,8 +39,8 @@ for ($i = 0; $i < strlen($new_password); $i++) {
 }
 
 $countnum = 0;
-for ($i = 0; $i < strlen($regnum); $i++) {
-    $encrypted .= chr(ord($regnum[$i]) * $passlist[$countnum] + 9999);
+for ($i = 0; $i < strlen($email); $i++) {
+    $encrypted .= chr(ord($email[$i]) * $passlist[$countnum] + 9999);
     if ($countnum == count($passlist) - 1) {
         $countnum = 0;
     } else {
@@ -49,7 +48,18 @@ for ($i = 0; $i < strlen($regnum); $i++) {
     }
 }
 
+$registration1 = 0;
+$registration2 = 0;
 
+for ($i = 0; $i < strlen($encrypted); $i++) {
+    $registration1 += ord($encrypted[$i]);
+}
+
+for ($i = 0; $i < strlen($email); $i++) {
+    $registration2 += ord($email[$i]);
+}
+
+$regnum = strval($registration1) . "-" . strval($registration2);
 $stmt = $conn->prepare("INSERT INTO userdata VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 if (!$stmt) {
@@ -57,15 +67,32 @@ if (!$stmt) {
 }
 
 $stmt->bind_param("ssssissssssssssisssssssisi", 
-    $first_name, $last_name, $gender, $email, $contact_number, $state, 
+    $first_name, $last_name, $gender, $email, $contact_number, $states, 
     $district, $business_type, $sector, $sub_sector, $organization_name, 
-    $date_registration, $company_size, $address, $website, $pincode, 
+    $date_registration, $company_size, $address1, $website, $pincode, 
     $mobile, $new_password, $accountname, $accountnumber, $bankname, 
-    $branchname, $ifsc, $mirc, $encrypted, $aadhar);
+    $branchname, $ifsc, $mirc, $regnum, $aadhar);
 
 
 if ($stmt->execute()) {
-    
+    if(isset($_FILES['file-upload']) && $_FILES['file-upload']['error'] == 0) {
+        $uploaddirectory = "../uploads/";
+        $ogfile_name = $_FILES['file-upload']['name'];
+        $fileext = pathinfo($ogfile_name, PATHINFO_EXTENSION);
+
+        $file_name = $regnum . '.' . $fileext;
+
+        $tmpFile = $_FILES['file-upload']['tmp_name'];
+        $dest = $uploaddirectory . $file_name;
+        if (!is_dir($uploaddirectory)) {
+            mkdir($uploaddirectory, 0755, true);
+        }
+        if(move_uploaded_file($tmpFile, $dest)) {
+            echo "The file has been uploaded and saved as: " . $file_name;
+        } else {
+            echo "Failed to move the uploaded file.";
+        }
+    }
     header("Location: ../../index.html");
     exit();  
 } else {
