@@ -87,9 +87,48 @@
             $result = $conn->query($sql);
             
             if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    setcookie("regnum", $row["regnum"], time() + 3600, "/");
+                while ($row = $result->fetch_assoc()) {
+                    if ($row['not_approved']) {
+                        echo "<p>" . htmlspecialchars("Application Denied") . "</p>";
+                        break;
+                    }
+                    $ayush = $row["AYUSH"] ? "True" : "False";
+                    $startup_india = $row["Startup India"] ? "True" : "False";
+                    $ccras = $row["CCRAS"] ? "True" : "False";
+                    $ccryn = $row["CCRYN"] ? "True" : "False";
+                    $ccrum = $row["CCRUM"] ? "True" : "False";
+                    $ccrs = $row["CCRS"] ? "True" : "False";
+                    $ccrh = $row["CCRH"] ? "True" : "False";
+            
+                    echo "<p>AYUSH: " . htmlspecialchars($ayush) . "</p>";
+            
+                    $business_type = $row['business_type'];
+            
+                    if ($business_type === "Ayurveda") {
+                        echo "<p>CCRAS: " . htmlspecialchars($ccras) . "</p>";
+                    }
+                    if ($business_type === "Yoga") {
+                        echo "<p>CCRYN: " . htmlspecialchars($ccryn) . "</p>";
+                    }
+                    if ($business_type === "Unani") {
+                        echo "<p>CCRUM: " . htmlspecialchars($ccrum) . "</p>";
+                    }
+                    if ($business_type === "Siddha") {
+                        echo "<p>CCRS: " . htmlspecialchars($ccrs) . "</p>";
+                    }
+                    if ($business_type === "Homeopathy") {
+                        echo "<p>CCRH: " . htmlspecialchars($ccrh) . "</p>";
+                    }
+            
+                    echo "<p>Startup India: " . htmlspecialchars($startup_india) . "</p>";
+            
+                    if ($row["AYUSH"] && ($row["CCRAS"] || $row["CCRYN"] || $row["CCRUM"] || $row["CCRS"] || $row["CCRH"]) && $row['Startup India']) {
+                        echo "<p>" . htmlspecialchars("Application Approved") . "</p>";
+                    }  else{
+                        echo "<p>" . htmlspecialchars("Application in Progress") . "</p>";
+                    }
                 }}
+            $conn->close();
             ?>
         </div>
         <div class = "show3">
