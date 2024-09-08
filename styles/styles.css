@@ -1,5 +1,6 @@
 html{
     scroll-behavior: smooth;
+    overflow-y: scroll;
     overflow-x: hidden;
 }
 
@@ -192,6 +193,7 @@ button:hover {
 
 .centerer {
     align-items: center;
+    align-self: center;
 }
 
 .button-container button {
@@ -215,6 +217,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
 input[type="file"] {
     display: none;
 }
@@ -315,12 +318,23 @@ input[type="file"] {
   }
   .show1{
     position: absolute;
-    top: 30%;
+    top: 60%;
     opacity: 1;
     left: 50%;
     transition: opacity 0.5s ease, transform 0.7s ease, background-color 0.3s ease;
     transform: translate(1000%,-50%);
   }
+
+  .show12{
+    top: 30%;
+  }
+  .show22{
+    top: 30%;
+  }
+  .show32{
+    top: 30%;
+  }
+
   .show2{
     position: absolute;
     top: 30%;
