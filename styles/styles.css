@@ -9,10 +9,6 @@ body, h1, h2, p, label, input, textarea, select, button {
     box-sizing: border-box;
 }
 
-.scroll {
-    overflow: hidden;
-}
-
 form > * {
     display: flex;
     flex-direction: column;
