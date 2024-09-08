@@ -22,10 +22,14 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 
+
+
 if ($result->num_rows > 0) {
-   
+    while($row = $result->fetch_assoc()) {
+        setcookie("regnum", $row["regnum"], time() + 3600, "/");
+    }
     echo "Login successful!";
-    header('Location: ../../src/homepagestartup.html');
+    header('Location: ../../src/homepagestartup.php');
 } else {
    
     header("Location: ../../src/wrong/loginstartupwrong.html"); 

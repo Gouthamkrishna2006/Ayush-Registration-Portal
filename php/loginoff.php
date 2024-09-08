@@ -25,11 +25,11 @@ $result = $stmt->get_result();
 
 
 if ($result->num_rows > 0) {
-   
+    
     echo "Login successful!";
     header('Location: ../../src/homepageofficial.html');
 } else {
-   
+    
     header("Location: ../../src/wrong/loginofficialwrong.html"); 
     exit();
 }

@@ -67,6 +67,7 @@ for ($i = 0; $i < strlen($email); $i++) {
 }
 
 $regnum = strval($registration1) . "-" . strval($registration2);
+
 $stmt = $conn->prepare("INSERT INTO userdata VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 if (!$stmt) {
