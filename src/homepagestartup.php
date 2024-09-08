@@ -72,6 +72,25 @@
         </div>
         <div class = "show2">
             <h1>Status</h1>
+            <?php
+            $servername = "localhost";
+            $username = "root";
+            $passworddb = "";
+            $dbname = "ayushtest";
+            $conn = new mysqli($servername, $username, $passworddb, $dbname);
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+            
+            $regnum = isset($_COOKIE["regnum"]) ? intval($_COOKIE["regnum"]) : 0;
+            $sql = "SELECT * FROM userdata WHERE regnum = $regnum";
+            $result = $conn->query($sql);
+            
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    setcookie("regnum", $row["regnum"], time() + 3600, "/");
+                }}
+            ?>
         </div>
         <div class = "show3">
             <h1>Stakeholders</h1>
