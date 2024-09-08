@@ -358,6 +358,40 @@ input[type="file"] {
     opacity: 0;
   }
 
+.addstake {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 200px; 
+    height: 200px; 
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.addstake-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.closestake {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closestake:hover,
+.closestake:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
   @media (max-width: 1000px) {
     .form_register {
         grid-template-columns: 1fr;
@@ -369,3 +403,5 @@ input[type="file"] {
         grid-column: span 1;
     }
 }
+
+
