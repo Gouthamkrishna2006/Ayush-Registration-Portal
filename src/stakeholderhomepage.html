@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Homepage - AYUSH Registration Portal</title>
+    <link rel="stylesheet" href="..//styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>AYUSH Startup Portal</h1>
+        <button id="backbtn">Registration Number: </button>
+
+    </header>
+
+    <main>
+        <div>
+            <h1>Startups</h1>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AYUSH Startup Registration Portal</p>
+    </footer>
+    <script>
+        document.getElementById('backbtn').addEventListener('click', function() {
+        const text = this.textContent;
+        navigator.clipboard.writeText(text).then(function() {
+            console.log('Text copied to clipboard');
+        }).catch(function(err) {
+            console.error('Failed to copy text: ', err);
+        });
+    });
+
+    </script>
+</body>
+</html>
