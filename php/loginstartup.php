@@ -11,13 +11,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
-
 $username = $_POST['email'];
 $password = $_POST['password'];
 
 
-$sql = "SELECT * FROM officialdata WHERE username = ? AND BINARY password = ?";
+$sql = "SELECT * FROM userdata WHERE email = ? AND BINARY password = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ss", $username, $password); 
 $stmt->execute();
@@ -27,10 +25,10 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
    
     echo "Login successful!";
-    header('Location: ../../src/homepageofficial.html');
+    header('Location: ../../src/homepagestartup.html');
 } else {
    
-    header("Location: ../../src/wrong/loginofficialwrong.html"); 
+    header("Location: ../../src/wrong/loginstartupwrong.html"); 
     exit();
 }
 
