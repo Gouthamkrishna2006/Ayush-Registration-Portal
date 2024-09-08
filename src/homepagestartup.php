@@ -133,6 +133,19 @@
         </div>
         <div class = "show3">
             <h1>Stakeholders</h1>
+            <button id="addstakeholder">Add New Stakeholder</button>
+            <div id="addstake" class="addstake">
+                <div class="addstake-content">
+                    <span class="closestake">&times;</span>
+
+                    <form method = 'post' enctype="multipart/form-data" action = '../php/addstake.php'>
+                    <label for="stake-id">Enter Stakeholder ID:</label>
+                    <input id="stake-id" type="text" name="stake_id" required>
+                    <button type="submit">Add Stakeholder</button>
+                    </form>
+                </div>
+
+            </div>
         </div>
         <div>
         </div>
@@ -142,6 +155,26 @@
         <p>&copy; 2024 AYUSH Startup Registration Portal</p>
     </footer>
     <script>
+        var addstake = document.getElementById("addstake");
+
+        var btn = document.getElementById("addstakeholder");
+
+        var span = document.getElementsByClassName("closestake")[0];
+
+
+        btn.onclick = function() {
+            addstake.style.display = "block";
+        }
+
+        span.onclick = function() {
+            addstake.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == addstake) {
+                addstake.style.display = "none";
+            }
+        }
         document.addEventListener('DOMContentLoaded', () => {
             const profile = document.getElementById('profile');
             const status = document.getElementById('status');
