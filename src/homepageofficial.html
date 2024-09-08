@@ -9,13 +9,26 @@
 <body>
     <header>
         <h1>AYUSH Startup Portal</h1>
-        <button id="backbtn">Registration Number: </button>
+        <button id="backbtn" class = "disnone">Back </button>
 
     </header>
 
     <main>
+        <div></div>
+            <button class="small-button start1" id="profile">Approved Startups</button>
+            <button class="small-button start2" id="status">Pending Approval</button>
+            <button class="small-button start3" id="stakeholders">Rejected Approval</button>
+        </div>
+        <div class = "show1">
+            <h1>Approved Startups</h1>
+        </div>
+        <div class = "show2">
+            <h1>Pending Approval</h1>
+        </div>
+        <div class = "show3">
+            <h1>Rejected Approval</h1>
+        </div>
         <div>
-            <h1>Startups</h1>
         </div>
     </main>
 
@@ -31,6 +44,54 @@
             console.error('Failed to copy text: ', err);
         });
     });
+        document.addEventListener('DOMContentLoaded', () => {
+            const profile = document.getElementById('profile');
+            const status = document.getElementById('status');
+            const stakeholders = document.getElementById('stakeholders');
+            const back = document.getElementById('backbtn');
+            const btngroup = document.querySelectorAll('.start1, .start2, .start3');
+            const showgroup = document.querySelectorAll('.show1, .show2, .show3')
+            const show1 = document.querySelectorAll('.show1');
+            const show2 = document.querySelectorAll('.show2');
+            const show3 = document.querySelectorAll('.show3');
+
+            function toggleButtons(showGroup, hideGroup, direction, direction2) {
+                showGroup.forEach((btn, index) => {
+                    setTimeout(() => {
+                        btn.classList.add('show');
+                        btn.style.transform = `translate(${direction})`;
+                    }, index * 100);
+                });
+                hideGroup.forEach((btn, index) => {
+                    setTimeout(() => {
+                        btn.classList.remove('show');
+                        btn.style.transform = `translate(${direction2})`;
+                    }, index * 100);
+                });
+                if (back.classList.contains('disnone')) {
+                    back.classList.remove('disnone');
+                } else {
+                    back.classList.add('disnone')
+                }
+                
+            }
+
+            profile.addEventListener('click', () => {
+                toggleButtons(show1, btngroup, '-50%,-50%','-500%,-50%');
+            });
+
+            status.addEventListener('click', () => {
+                toggleButtons(show2, btngroup, '-50%,-50%','-500%,-50%');
+            });
+
+            stakeholders.addEventListener('click', () => {
+                toggleButtons(show3, btngroup, '-50%,-50%', '-500%,-50%');
+            });
+
+            back.addEventListener('click', () => {
+                toggleButtons(showgroup, btngroup, '1000%,-50%', '-50%,-50%');
+            });
+        });
 
     </script>
 </body>
