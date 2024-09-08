@@ -26,7 +26,7 @@
     <main class="main-register">
         <section id="registration">
             <h2>Startup Registration Form</h2>
-            <form method="post" action="../php/startupreg.php" enctype="multipart/form-data" class = "form_register">
+            <form method="post" action="../php/startupreg.php" enctype="multipart/form-data" class = "form_register" onsubmit="return validatePassword()" >
                 <div class="form-group">
                     <label for="first-name">First Name:</label>
                     <input id="first-name" type="text" name="first-name" required>
@@ -223,6 +223,21 @@
         &copy; 2024 AYUSH Registration Portal
     </footer>
     <script src="..//js/registerstartup.js"></script>
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("new-password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+            var errorMessage = document.getElementById("error-message");
+
+            if (password !== confirmPassword) {
+                errorMessage.style.display = "block";
+                return false;
+            } else {
+                errorMessage.style.display = "none";
+                return true;
+            }
+        }
+    </script>
 </body>
 
 </html>
